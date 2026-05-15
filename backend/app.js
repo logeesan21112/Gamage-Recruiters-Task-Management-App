@@ -8,19 +8,19 @@ const app = express();
 app.use(morgan('dev'))
 app.use(cors())
 app.use(express.json())
-app.use(express.urlencoded({extended:false}))
+app.use(express.urlencoded({extended: false}))
 
-//routes
+// routes
 app.use("/api/v1", Routes)
 
-//404
+// 404
 app.use((req, res) => {
-    res.send({
-        code: 404,
-        msg: "Page not found",
-        success:false
-    })
-    return 
+  res.send({
+    code: 404,
+    msg: "Page not found",
+    success: false
+  })
+  return
 })
 
 export default app
